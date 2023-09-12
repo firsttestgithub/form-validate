@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard event</title>
+    <style>
+        body{
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image:url("Hydrangeas.jpg") ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 87vh;
+
+        }
+        #form{
+            width: 250px;
+            margin: 100px auto 0 auto;
+            border: 2px solid #000;
+            border-radius: 15px;
+            padding: 25px;
+            background-color: rgba(0,0,0,.5);
+            box-shadow:-2px 2px 15px #000;
+        }
+        #form h1{
+            color: #ffff;
+        }
+        p,input{
+            font-size: 20px;
+        }
+        input{
+            width:225px; padding: 10px;
+            border: 1px solid #000;
+            border-radius: 10px;
+           
+            background-color: #fff;
+            box-shadow: inset -2px 2px 10px #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+       <h1>Keyboard Event</h1>
+       <p>onkeydown</p> 
+       <input type="text" onkeydown="alert(this.value)">
+       <p>onkeyup</p> 
+     <!--  <input type="text" onkeyup="document.getElementById('form').style.background=this.value">-->
+     <input type="text" id="text" onkeyup="document.getElementById('text').style.borderColor =this.value">
+       <p>onkeypressed</p> 
+       <input type="text" onkeypress="alert(this.value)">
+    </div>
+
+
+    <script>
+       
+    </script>
+</body>
+</html>

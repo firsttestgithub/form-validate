@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myform {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 20px;
+  border: 1px solid green;
+}
+.formrow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.formrow:not(:last-child) {
+  border-bottom: 1px dashed #666;
+}
+.formrow label {
+  padding: 5px;
+  background: #ccc;
+}
+.formrow > * {
+  flex: 1 0 0;
+  margin: 10px;
+}
+.messages {
+  flex: 1 0 100%;
+}
+.messages span {
+  display: none;
+}
+
+.validateme:invalid {
+  border: 1px solid red;
+}
+.validateme:valid ~ .messages .success {
+  display: block;
+  background: green;
+  color: #fff;
+  padding: 10px;
+}
+.validateme:invalid ~ .messages .error {
+  display: block;
+  background: red;
+  color: #fff;
+  padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <form class="myform">
+        <div class="formrow">
+          <input class="validateme" required type="text" id="first_name" name="first_name">
+          <label for="first_name">First Name</label>
+          <p class="messages">
+            <span class="error">Enter your first name into the field above</span>
+            <span class="success">Success</span>
+          </p>
+        </div>
+        <div class="formrow">
+          <input class="validateme" required type="text" id="last_name" name="last_name">
+          <label for="last_name">Last Name</label>
+          <p class="messages">
+            <span class="error">Enter your Last name into the field above</span>
+            <span class="success">Success</span>
+          </p>
+        </div>
+      </form>
+</body>
+</html>

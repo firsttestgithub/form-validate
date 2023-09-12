@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Form</title>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+ 
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+margin-top: 20px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: black;
+  border-radius: 5px;
+
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+.login-box button   {
+    background-color: black;
+}
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+.error{
+  color:red;
+  margin:0;
+  position: relative;
+  top:-17px;
+ 
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+.input-icon i {
+            position: absolute;
+        }
+         
+        .input-icon {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+         
+        .icon {
+            padding: 10px;
+            color: green;
+           font-size: 24px;
+            text-align: center;
+        }
+         
+       
+    </style>
+</head>
+<body>
+    <!--
+<div class="container">
+    <form action="">
+        <fieldset>
+            <legend>Sign in your Account</legend>  
+        <label for="username">username:</label>
+        <input type="text" id="user-name" name="username" >
+        <label for="username">Email:</label>
+        <input type="text" id="user-name" name="username" >  
+        <label for="username">Password:</label>
+        <input type="text" id="user-name" name="username" >  
+        <label for="username">Confirm Password:</label>
+        <input type="text" id="user-name" name="username" >  
+        </fieldset>
+    </form>
+</div>
+-->
+<div class="login-box">
+    <h2>Validation Form</h2>
+    <form action="practice.html" method="post">
+      <div class="user-box">
+        
+        <input type="text" name="" id="text" required="">
+        <p id="textError" class="error"></p>
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="" id="email" required="">
+        <p id="emailError" class="error"></p>
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="" id="password" required="">
+        <p id="passError" class="error"></p>
+        <label>Password</label>
+      </div>
+      
+      <div class="user-box">
+        <input type="password" id="confirm" name="" required="">
+        <label>Confirm Password</label>
+        <p id="conError" class="error"></p>
+      </div>
+   <button onclick="validate()"><a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a></button>
+    </form>
+  </div>
+    <script>
+
+                                //Mini Program
+     /*   var a = prompt("Enter month number");
+        switch(true){
+        
+            case(a==1):
+            document.write("<h1>"+"January");
+            break;
+            case(a==2):
+            document.write("February");
+            break;
+            case(a==3):
+            document.write("March");
+            break;
+            case(a==4):
+            document.write("April");
+            break;
+            case(a==5):
+            document.write("May");
+            break;
+            case(a==6):
+            document.write("June");
+            break;
+            case(a==7):
+            document.write("July");
+            break;
+            case(a==8):
+            document.write("August");
+            break;
+            case(a==9):
+            document.write("September");
+            break;
+            case(a==10):
+            document.write("October");
+            break;
+            case(a==11):
+            document.write("November");
+            break;
+            case(a==12):
+            document.write("December");
+            break;
+            default:
+                document.write("Enter valid month number"+"</h1>")
+        }
+
+
+  var age = prompt("Enter your age:");
+  if(age >= 15 && age <=25){
+      alert("you can take it medicine")
+  } 
+
+  else{
+      alert("you can't take it medicine")
+  }*
+
+
+  var time = prompt("Enter your time for check it:")
+
+  if(time >= 6 && time <= 11){
+      alert("Good Morning")
+  }
+  else if(time >= 12 && time <= 5){
+      alert("Good Afternoon")
+  }
+  else if(time >= 5 && time <= 7){
+      alert("Good Evening")
+  }
+  else{
+      alert("Good night")
+  }*/
+
+  function validate(){
+    var user_name  = document.getElementById('text');
+    var pass_name = document.getElementById('password');
+    var email = document.getElementById('email');
+    var confirm_pass = document.getElementById('confirm');
+    var re = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    var flag = 1;
+    if(user_name.value == ""){
+     document.getElementById('textError').innerHTML="Please enter your name";
+    flag = 0;
+    }
+   else if(user_name.value.length != 3){
+     document.getElementById('textError').innerHTML="";
+     flag = 0;
+   }
+    else{
+      document.getElementById('textError').innerHTML="";
+    flag = 1;
+    }
+   if(pass_name.value == "" ){
+      document.getElementById('passError').innerHTML="Please enter your password";
+     flag = 0;
+    }
+
+    else if(pass_name.value.length < 10){
+      document.getElementById('passError').innerHTML="Password must be 10 digits";
+     flag = 0;
+    }
+    else{
+      document.getElementById('passError').innerHTML="";
+      alert
+      flag = 1;
+    }
+
+    if(email.value == "" ){
+      document.getElementById('emailError').innerHTML="Please enter your email";
+     flag = 0;
+    }
+
+    else if (!email.value.match(re)) {
+      document.getElementById('emailError').innerHTML="Please enter valid email id";
+      flag = 0;
+
+    }
+    else{
+      document.getElementById('emailError').innerHTML="";
+     
+      flag = 1;
+    }
+
+    if(confirm_pass.value == ""){
+      document.getElementById('conError').innerHTML="Re-enter Password";
+      flag = 0;
+    }
+
+    else if(pass_name.value != confirm_pass.value){
+      document.getElementById('conError').innerHTML="Password and Confirm Password should be same.";
+      flag = 0;
+    }
+    
+    else{
+      document.getElementById('conError').innerHTML="";
+      flag = 1;
+    }
+  }
+    </script>
+</body>
+</html>
